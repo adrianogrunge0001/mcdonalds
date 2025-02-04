@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>McDonald's</h1>
+    </header>
+    <main>
+        <section id="categorias">
+            <h2>Categorias</h2>
+            <div class="categorias-container">
+                <button class="categoria-btn active" data-categoria="lanches">Lanches</button>
+                <button class="categoria-btn" data-categoria="bebidas">Bebidas</button>
+                <button class="categoria-btn" data-categoria="sobremesas">Sobremesas</button>
+            </div>
+        </section>
+        <section id="produtos" class="produtos-container"></section>
+    </main>
+
+    <!-- Modal de Adicionar ao Carrinho -->
+    <div id="modal-adicionar" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-imagem" src="" alt="">
+            <h2 id="modal-nome"></h2>
+            <p id="modal-descricao"></p>
+            <div class="quantidade-container">
+                <button id="menos" class="btn-quantidade">-</button>
+                <span id="quantidade">1</span>
+                <button id="mais" class="btn-quantidade">+</button>
+            </div>
+            <button id="adicionar-carrinho-modal" class="btn-quantidade">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <!-- Modal do Carrinho de Compras -->
+    <div id="modal-carrinho" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrinho de Compras</h2>
+            <ul id="lista-carrinho"></ul>
+            <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+            <button id="finalizar-pedido" class="btn-quantidade">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Ícone do Carrinho Flutuante -->
+    <div id="carrinho-flutuante">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="contador-carrinho">0</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #ffc72c;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#categorias {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.categorias-container {
+    display: flex;
+    gap: 10px;
+}
+
+.categoria-btn {
+    background-color: #ffc72c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.categoria-btn.active {
+    background-color: #e6b800;
+}
+
+.categoria-btn:hover {
+    background-color: #e6b800;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.produto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(25% - 20px);
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.produto h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.produto p {
+    font-size: 1em;
+    color: #666;
+}
+
+.produto .preco {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Layout Responsivo */
+@media (max-width: 768px) {
+    .produto {
+        width: calc(50% - 20px);
+        /* Duas colunas em telas menores que 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .produto {
+        width: calc(50% - 20px);
+        /* Mantém duas colunas mesmo em telas muito pequenas */
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.quantidade-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantidade-container button {
+    background-color: #ffc72c;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 10px;
+}
+
+.quantidade-container button:hover {
+    background-color: #e6b800;
+}
+
+#quantidade {
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+
+/* Ícone do Carrinho Flutuante */
+#carrinho-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffc72c;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#carrinho-flutuante i {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+#contador-carrinho {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+/* Estilos do Carrinho no Modal */
+#lista-carrinho {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#lista-carrinho li .quantidade-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#lista-carrinho li .quantidade-container button {
+    background-color: #ffc72c;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px;
+}
+
+#lista-carrinho li .quantidade-container button:hover {
+    background-color: #e6b800;
+}
+
+#lista-carrinho li .quantidade-container span {
+    font-size: 1em;
+    margin: 0 10px;
+}
+
+#lista-carrinho li button.remover {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ff0000;
+}
+
+#lista-carrinho li button.remover:hover {
+    color: #cc0000;
+}
+
+/* Botões de Quantidade e Adicionar ao Carrinho */
+.btn-quantidade {
+    background-color: #ffc72c;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-quantidade:hover {
+    background-color: #e6b800;
+}
+
+/* Botão Adicionar ao Carrinho no Modal */
+#adicionar-carrinho-modal {
+    background-color: #ffc72c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#adicionar-carrinho-modal:hover {
+    background-color: #e6b800;
+}
